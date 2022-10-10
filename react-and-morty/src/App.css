@@ -1,0 +1,16 @@
+#logo {
+    max-width: 600px;
+}
+.App {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.buttons {
+    cursor: pointer;
+    background-color: transparent;
+    margin-left: 10px;
+    margin-right: 10px;
+}

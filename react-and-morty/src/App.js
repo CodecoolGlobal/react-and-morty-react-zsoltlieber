@@ -11,7 +11,16 @@ function App() {
   console.log("Locations data: ");
   console.log(locations);
 
-  return <div className="App">Take a look at the console! (F12)</div>;
+  return (
+    <div className="App">
+      <img id="logo" src={require('./Rick-and-Morty.png')} />
+      <div>
+        <button className="buttons">Locations</button>
+        <button className="buttons">Characters</button>
+      </div>
+      <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
+    </div>
+  );
 }
 
 export default App;
