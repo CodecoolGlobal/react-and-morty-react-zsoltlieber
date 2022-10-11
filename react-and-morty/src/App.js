@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import "./App.css";
 import { useLocations } from "./api/useData";
-import Characters from './conponent/Characters'
+import Characters from "./conponent/Characters";
 import Location from "./conponent/Location";
-function App() {
 
+function App() {
   const locations = useLocations(1);
-  const [isDisplayed, setIsDisplayed] = useState(true)
+  const [isDisplayed, setIsDisplayed] = useState(true);
+  const [isDisplayedCharacter, setisDisplayedCharacter] = useState(true);
+  const [isDisplayedLocation, setisDisplayedLocation] = useState(true);
 
   function hideDescription() {
-    setIsDisplayed(!isDisplayed)
+    setIsDisplayed(!isDisplayed);
   }
-
 
   console.log("Locations data: ");
   console.log(locations);
@@ -30,8 +31,8 @@ function App() {
       <p style={{ display: isDisplayed ? "block" : "none" }}>
         Placeholder Placeholder Placeholder Placeholder Placeholder
       </p>
-      <Characters/>
-      <Location />
+      {isDisplayedCharacter && <Characters />}
+      {isDisplayedLocation && <Location />}
     </div>
   );
 }
