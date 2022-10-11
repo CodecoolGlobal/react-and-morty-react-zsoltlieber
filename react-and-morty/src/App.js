@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-import { useCharacters, useLocations } from "./api/useData";
-
+import { useLocations } from "./api/useData";
+import Characters from './conponent/Characters'
+import Location from "./conponent/Location";
 function App() {
-  const characters = useCharacters(1);
+
   const locations = useLocations(1);
   const [isDisplayed, setIsDisplayed] = useState(true)
 
@@ -11,19 +12,26 @@ function App() {
     setIsDisplayed(!isDisplayed)
   }
 
-  console.log("Characters data: ");
-  console.log(characters);
+
   console.log("Locations data: ");
   console.log(locations);
 
   return (
     <div className="App">
-      <img id="logo" src={require('./Rick-and-Morty.png')} />
+      <img id="logo" src={require("./Rick-and-Morty.png")} alt="" />
       <div>
-        <button onClick={hideDescription} className="buttons">Locations</button>
-        <button onClick={hideDescription} className="buttons">Characters</button>
+        <button onClick={hideDescription} className="buttons">
+          Locations
+        </button>
+        <button onClick={hideDescription} className="buttons">
+          Characters
+        </button>
       </div>
-      <p style={{display: isDisplayed ? 'block' : 'none'}} >Placeholder Placeholder Placeholder Placeholder Placeholder</p>
+      <p style={{ display: isDisplayed ? "block" : "none" }}>
+        Placeholder Placeholder Placeholder Placeholder Placeholder
+      </p>
+      <Characters />
+      <Location />
     </div>
   );
 }
