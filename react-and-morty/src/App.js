@@ -3,21 +3,23 @@ import "./App.css";
 import { useLocations } from "./api/useData";
 import Characters from './component/Characters'
 import Location from "./component/Location";
+
 function App() {
-
   const locations = useLocations(1);
-  const [isDisplayed, setIsDisplayed] = useState(true)
-  const [isCharactersDisplayed, setIsCharactersDisplayed] = useState(false)
-  const [isLocationDisplayed, setIsLocationDisplayed] = useState(false)
+  const [showCharacters, setShowCharacters] = useState(false)
+  const [showLocations, setShowLocations] = useState(false)
 
-  function showLocations() {
-    setIsDisplayed(false)
-    setIsLocationDisplayed(!isLocationDisplayed)
+  function locSwitch() {
+    if (showCharacters === true) {
+      setShowCharacters(!showCharacters)
+    }
+  setShowLocations(!showLocations)
   }
-
-  function showCharacters() {
-    setIsDisplayed(false)
-    setIsCharactersDisplayed(!isCharactersDisplayed)
+  function charSwitch() {
+    if (showLocations === true) {
+      setShowLocations(!showLocations)
+    }
+  setShowCharacters(!showCharacters)
   }
 
   console.log("Locations data: ");
@@ -27,18 +29,18 @@ function App() {
     <div className="App">
       <img id="logo" src={require("./Rick-and-Morty.png")} alt="" />
       <div>
-        <button onClick={showLocations} className="buttons">
+        <button onClick={locSwitch} className="buttons">
           Locations
         </button>
-        <button onClick={showCharacters} className="buttons">
+        <button onClick={charSwitch} className="buttons">
           Characters
         </button>
       </div>
-      <p style={{ display: isDisplayed ? "block" : "none" }}>
+      {!showLocations && !showCharacters && <p>
         Placeholder Placeholder Placeholder Placeholder Placeholder
-      </p>
-      <Characters style={{ display: isCharactersDisplayed ? "flex" : "none" }} />
-      <Location style={{ display: isLocationDisplayed ? "flex" : "none" }} />
+      </p>}
+      {showCharacters && <Characters/>}
+      {showLocations && <Location />}
     </div>
   );
 }
