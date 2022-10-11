@@ -22,9 +22,6 @@ function App() {
   setShowCharacters(!showCharacters)
   }
 
-  console.log("Locations data: ");
-  console.log(locations);
-
   return (
     <div className="App">
       <img id="logo" src={require("./Rick-and-Morty.png")} alt="" />
