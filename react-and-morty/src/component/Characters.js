@@ -1,5 +1,5 @@
 import React from "react";
-import { useCharacters } from "..//api/useData";
+import { useCharacters } from "../api/useData";
 
 function Characters() {
   const characters = useCharacters(1);
@@ -7,7 +7,7 @@ function Characters() {
   return characters.results !== undefined ? (
     <div>
       {characters.results.map((character) => (
-        <div>
+        <div key={character.id}>
           <img src={character.image} alt="" />
           <p>{character.name}</p>
           <p>{character.species}</p>
@@ -15,7 +15,7 @@ function Characters() {
       ))}
     </div>
   ) : (
-    console.log("loding")
+    console.log("loading...")
   );
 }
 
