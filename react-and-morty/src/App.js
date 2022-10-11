@@ -30,7 +30,7 @@ function App() {
       <p style={{ display: isDisplayed ? "block" : "none" }}>
         Placeholder Placeholder Placeholder Placeholder Placeholder
       </p>
-      <Characters />
+      <Characters/>
       <Location />
     </div>
   );
