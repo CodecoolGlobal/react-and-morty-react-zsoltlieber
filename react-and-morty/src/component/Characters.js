@@ -1,7 +1,8 @@
 import React from "react";
-import { useCharacters } from "..//api/useData";
+
+import { useCharacters } from "../api/useData";
+import CharactersInfo from "./CharacterInfo";
 import "./character.css";
-import CharacterCard from "./CharacterCard.js";
 
 function Characters() {
   let characters = useCharacters(1);

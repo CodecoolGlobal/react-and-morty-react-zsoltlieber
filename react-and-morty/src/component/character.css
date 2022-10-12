@@ -5,8 +5,8 @@
     left:0;
 }
 .character{
-    background-color: aquamarine;
-    border: 5px blue solid;
+    background-color: rgb(69, 178, 142);
+    border: 5px rgb(66, 66, 190) solid;
     border-radius: 15px;
     padding: 20px;
     width: 300px;
