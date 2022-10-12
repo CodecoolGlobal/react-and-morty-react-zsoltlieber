@@ -3,3 +3,14 @@
     border-radius: 5px;
     padding: 20px;
 }
+
+.characterpagination {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 100px 30px 30px 30px 100px;
+}
+
+.charpagebutton {
+    margin: 5px;
+    text-align: center;
+}
