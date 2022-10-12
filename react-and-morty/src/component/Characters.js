@@ -1,7 +1,7 @@
 import React from "react";
 import { useCharacters } from "../api/useData";
 import CharactersInfo from "./CharacterInfo";
-import "./Character.css";
+import "./character.css";
 
 function Characters() {
   const characters = useCharacters(1);
