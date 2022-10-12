@@ -17,24 +17,8 @@ function Characters() {
 
   return characters.results !== undefined ? (
     <>
-    <div className="characterpagination">
-        <button onClick={handlePaginationChange} className="charpagebutton">
-          first
-        </button>
-        <button onClick={handlePaginationChange} className="charpagebutton">
-          {firstPage}
-        </button>
-        <button onClick={handlePaginationChange} className="charpagebutton">
-          {secondPage}
-        </button>
-        <button onClick={handlePaginationChange} className="charpagebutton">
-          {thirdPage}
-        </button>
-        <button onClick={handlePaginationChange} className="charpagebutton">
-          last
-        </button>
-      </div>
     <img id="logoSmall" src={require("../Rick-and-Morty.png")} alt=""></img>
+    <h1 className="character-title" >CHARACTERS</h1>
     <div className="cardList">
       {characters.results.map((chara) => (
         <CharacterCard character={chara} />

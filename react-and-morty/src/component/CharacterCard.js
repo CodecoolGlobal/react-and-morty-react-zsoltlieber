@@ -11,8 +11,8 @@ function CharacterCard(props) {
   if (props !== undefined) {
     return (
       <div className="character" key={props.character.id}>
-        <img src={props.character.image} alt="" onClick={showInfo} />
-        {showMore && <p>name: {props.character.name}</p>}
+        <img src={props.character.image} alt="" onClick={showInfo} className="character-img"/>
+        {showMore && <p className="character-name">name: {props.character.name}</p>}
         {showMore && <p>species: {props.character.species}</p>}
         {showMore && <p>location: {props.character.location.name}</p>}
         <p className="status">status: {props.character.status}</p>
