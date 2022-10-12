@@ -13,8 +13,8 @@ function CharacterCard(props) {
   if (props !== undefined) {
     return (
       <div onClick={handleClick} className="character" key={props.character.id}>
-        <img src={props.character.image} alt="" />
-        <p>name: {props.character.name}</p>
+        <img src={props.character.image} alt="" className="character-img"/>
+        <p className="character-name">{props.character.name}</p>
         <p>species: {props.character.species}</p>
         <p>location: {props.character.location.name}</p>
         <p className="status">status: {props.character.status}</p>
