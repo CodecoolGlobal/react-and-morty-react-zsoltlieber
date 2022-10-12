@@ -42,7 +42,7 @@ function App() {
         </button>
       </div>
       {!showLocations && !showCharacters && (
-        <>
+        <div className="description">
           <p>
             "Rick and Morty is an American adult animated science-fiction
             <br></br>
@@ -50,7 +50,7 @@ function App() {
             Network's nighttime programming block Adult Swim."
             <a href="https://en.wikipedia.org/wiki/Rick_and_Morty"> © link</a>
           </p>
-        </>
+        </div>
       )}
       <div className="container">
      
