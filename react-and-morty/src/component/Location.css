@@ -1,0 +1,12 @@
+.location-card {
+    border: 1px solid black;
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+}
+
+.locations {
+    width: 400px;
+    height: 400px;
+    margin-left: 0px;
+}

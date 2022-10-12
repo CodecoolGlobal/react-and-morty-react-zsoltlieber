@@ -1,15 +1,19 @@
 import React from "react";
-import { useCharacters } from "..//api/useData";
-import "./character.css";
+import { useCharacters } from "../api/useData";
+import CharactersInfo from "./CharacterInfo";
+import "./Character.css";
 
 function Characters() {
   const characters = useCharacters(1);
-  console.log(characters.results)
-
+  const cards = document.querySelectorAll('.character')
+  console.log(cards)
+  // cards.map(card => card.addEventListener('click', CharactersInfo))
   return characters.results !== undefined ? (
-    <div>
+    <>
+    <img id="logoSmall" src={require("../Rick-and-Morty.png")} alt="" />
+    <div className="cardList">
       {characters.results.map((character) => (
-        <div className="character">
+        <div className="character" key={character.id}>
           <img src={character.image} alt="" />
           <p>name: {character.name}</p>
           <p>species: {character.species}</p>
@@ -17,9 +21,10 @@ function Characters() {
           <p className="status">status: {character.status}</p>
         </div>
       ))}
-    </div>
+      </div>
+    </>
   ) : (
-    console.log("loding")
+    console.log("loading...")
   );
 }
 
