@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useCharacters } from "../api/useData";
-import CharactersInfo from "./CharacterInfo";
+import CharacterCard from "./CharacterCard";
 import "./character.css";
 
 function Characters() {
