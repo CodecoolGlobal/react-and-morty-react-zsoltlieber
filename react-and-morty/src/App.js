@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import { useLocations } from "./api/useData";
 import Characters from "./component/Characters";
 import Location from "./component/Location";
 
 function App() {
-  const locations = useLocations(1);
   const [showCharacters, setShowCharacters] = useState(false);
   const [showLocations, setShowLocations] = useState(false);
 
@@ -24,7 +22,9 @@ function App() {
 
   return (
     <div className="App">
-      <img id="logo" src={require("./Rick-and-Morty.png")} alt="" />
+      {!showCharacters && !showLocations && (
+        <img id="logo" src={require("./Rick-and-Morty.png")} alt="" />
+      )}
       <div>
         <button onClick={locSwitch} className="buttons">
           Locations
@@ -34,10 +34,21 @@ function App() {
         </button>
       </div>
       {!showLocations && !showCharacters && (
-        <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
+        <>
+          <p>
+            "Rick and Morty is an American adult animated science-fiction
+            <br></br>
+            sitcom created by Justin Roiland and Dan Harmon for Cartoon<br></br>
+            Network's nighttime programming block Adult Swim."
+            <a href="https://en.wikipedia.org/wiki/Rick_and_Morty"> © link</a>
+          </p>
+        </>
       )}
-      {showCharacters && <Characters />}
-      {showLocations && <Location />}
+      <div className="container">
+     
+        {showCharacters && <Characters />}
+        {showLocations && <Location />}
+      </div>
     </div>
   );
 }

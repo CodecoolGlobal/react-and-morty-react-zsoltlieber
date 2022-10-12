@@ -5,9 +5,8 @@ import "./Location.css";
 function Location() {
   const locations = useLocations(1);
 
-  
   return locations.results !== undefined ? (
-    <div className='locations'>
+    <div>
       {locations.results.map((location) => (
         <div className='location-card' key={location.id}>
           <p>{location.name}</p>

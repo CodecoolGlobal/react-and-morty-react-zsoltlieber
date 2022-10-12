@@ -15,11 +15,8 @@ function Characters() {
   }
 
   return characters.results !== undefined ? (
-    <div>
-      {characters.results.map((chara) => (
-        <CharacterCard character={chara} />
-      ))}
-      <div className="characterpagination">
+    <>
+    <div className="characterpagination">
         <button onClick={handlePaginationChange} className="charpagebutton">
           first
         </button>
@@ -36,7 +33,13 @@ function Characters() {
           last
         </button>
       </div>
+    <img id="logoSmall" src={require("../Rick-and-Morty.png")} alt=""></img>
+    <div className="cardList">
+      {characters.results.map((chara) => (
+        <CharacterCard character={chara} />
+      ))}
     </div>
+    </>
   ) : (
     console.log("loading...")
   );
