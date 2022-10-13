@@ -14,6 +14,7 @@ function Characters() {
     <>
     <img id="logoSmall" src={require("../Rick-and-Morty.png")} alt=""></img>
     <button onClick={()=> {if (pageComp > 1) setPageComp(pageComp - 1)}}>Back</button>
+    <p> Current page is : {pageComp} </p>
     <button onClick={()=> {if (pageComp < 42) setPageComp(pageComp + 1)}}>Forward</button>
     <h1 className="character-title" >CHARACTERS</h1>
     <div className="cardList">
