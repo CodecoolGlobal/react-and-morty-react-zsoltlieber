@@ -11,7 +11,6 @@ function CharacterCard(props) {
     setShowMore(false)
   }
 
-  console.log(props);
   if (props !== undefined) {
     return (
       <div className="character" key={props.character.id} onMouseEnter={showInfo} onMouseLeave={hideInfo}>
