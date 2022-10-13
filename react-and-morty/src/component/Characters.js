@@ -5,22 +5,64 @@ import CharacterCard from "./CharacterCard";
 import "./character.css";
 
 function Characters() {
-  let [pageComp, setPageComp] = useState(1)
-  let characters = useCharacters(pageComp);
-  let maxPage = (characters.info?.pages)
+  let [startPageNr, setStartPageNer] = useState(1);
+  let [actualPageNr, setActualPageNr] = useState(1);
+  let characters = useCharacters(startPageNr);
+  let maxPage = characters.info?.pages;
 
-  if (!maxPage) {return null} else {console.log(maxPage)}
+  function pageChanger(e) {
+    setStartPageNer(e.target.innerText);
+  }
+
+  function decrementPageNr() {
+    if (actualPageNr > 6) {
+      setActualPageNr(actualPageNr - 5);
+    } else setActualPageNr(1);
+  }
+  function incrementPageNr() {
+    if (actualPageNr < maxPage - 6) {
+      setActualPageNr(actualPageNr + 5);
+    } else setActualPageNr(maxPage - 4);
+  }
+
+  if (!maxPage) {
+    return null;
+  }
   return characters.results !== undefined ? (
     <>
-    <img id="logoSmall" src={require("../Rick-and-Morty.png")} alt=""></img>
-    <button onClick={()=> {if (pageComp > 1) setPageComp(pageComp - 1)}}>Back</button>
-    <button onClick={()=> {if (pageComp < 42) setPageComp(pageComp + 1)}}>Forward</button>
-    <h1 className="character-title" >CHARACTERS</h1>
-    <div className="cardList">
-      {characters.results.map((chara) => (
-        <CharacterCard character={chara} />
-      ))}
-    </div>
+      <div className="pagination">
+        <div className="page" onClick={decrementPageNr}>
+          prev
+        </div>
+        <div className="page" onClick={pageChanger}>
+          {Number(actualPageNr)}
+        </div>
+        <div className="page" onClick={pageChanger}>
+          {Number(actualPageNr) + 1}
+        </div>
+        <div className="page" onClick={pageChanger}>
+          {Number(actualPageNr) + 2}
+        </div>
+        <div className="page" onClick={pageChanger}>
+          {Number(actualPageNr) + 3}
+        </div>
+        <div className="page" onClick={pageChanger}>
+          {Number(actualPageNr) + 4}
+        </div>
+        <div className="page">...</div>
+        <div className="page">{maxPage}</div>
+        <div className="page" onClick={incrementPageNr}>
+          next
+        </div>
+      </div>
+
+      <img id="logoSmall" src={require("../Rick-and-Morty.png")} alt=""></img>
+      <h1 className="character-title">CHARACTERS</h1>
+      <div className="cardList">
+        {characters.results.map((chara) => (
+          <CharacterCard character={chara} />
+        ))}
+      </div>
     </>
   ) : (
     console.log("loading...")

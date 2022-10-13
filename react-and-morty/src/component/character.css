@@ -68,3 +68,27 @@
 p { 
     margin:0 
 }
+
+.pagination {
+  display: inline-block;
+  background-color: aliceblue;
+  border-radius: 10px;
+}
+
+.pagination div {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination div.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination div:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
