@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function CharacterCard(props) {
   const [showMore, setShowMore] = useState(false);
