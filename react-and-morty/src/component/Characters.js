@@ -32,7 +32,7 @@ function Characters() {
     <>
       <div className="pagination">
         <div className="page" onClick={decrementPageNr}>
-          prev
+          prev 5
         </div>
         <div className="page" onClick={pageChanger}>
           {Number(actualPageNr)}
@@ -52,7 +52,7 @@ function Characters() {
         <div className="page">...</div>
         <div className="page">{maxPage}</div>
         <div className="page" onClick={incrementPageNr}>
-          next
+          next 5
         </div>
       </div>
 
@@ -60,7 +60,7 @@ function Characters() {
       <h1 className="character-title">CHARACTERS</h1>
       <div className="cardList">
         {characters.results.map((chara) => (
-          <CharacterCard character={chara} />
+          <CharacterCard key={chara.id} character={chara} />
         ))}
       </div>
     </>

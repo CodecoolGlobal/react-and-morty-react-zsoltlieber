@@ -22,7 +22,7 @@ export const Pagination = (props) => {
     <>
       <div className="pagination">
         <div className="page" onClick={decrementPageNr}>
-          prev
+          prev 5
         </div>
         <div className="page" onClick={pageChanger}>
           {startPageNr}
@@ -46,7 +46,7 @@ export const Pagination = (props) => {
           {props.maxPage}
         </div>
         <div className="page" onClick={incrementPageNr}>
-          next
+          next 5
         </div>
       </div>
     </>

@@ -11,7 +11,6 @@ function Location() {
 
   function pageChanger(e) {
     setStartPageNer(e.target.innerText);
-    console.log(e.target.innerText);
   }
 
   function decrementPageNr() {
@@ -31,7 +30,7 @@ function Location() {
       <>
       <div className="pagination">
         <div className="page" onClick={decrementPageNr}>
-          prev
+          prev 5
         </div>
         <div className="page" onClick={pageChanger}>
           {Number(actualPageNr)}
@@ -51,14 +50,14 @@ function Location() {
         <div className="page">...</div>
         <div className="page">{maxPage}</div>
         <div className="page" onClick={incrementPageNr}>
-          next
+          next 5
         </div>
       </div>
   
       <h1 className="location-title">LOCATIONS</h1>
       <div className="locations">
         {locations.results.map((location) => (
-          <LocationCard location={location} />
+          <LocationCard key={location.id} location={location} />
         ))}
       </div>
     </>
