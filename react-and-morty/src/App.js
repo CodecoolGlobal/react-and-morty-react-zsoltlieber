@@ -28,7 +28,7 @@ function App() {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: "fixed",
-      height: "800vh"
+      height: "420vh"
       }}>
       {!showCharacters && !showLocations && (
         <img id="logo" src={require("./Rick-and-Morty.png")} alt="" />

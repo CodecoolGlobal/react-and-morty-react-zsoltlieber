@@ -54,6 +54,7 @@ function Location() {
         </div>
       </div>
   
+      <img id="logoSmall" src={require("../Rick-and-Morty.png")} alt=""></img>
       <h1 className="location-title">LOCATIONS</h1>
       <div className="locations">
         {locations.results.map((location) => (

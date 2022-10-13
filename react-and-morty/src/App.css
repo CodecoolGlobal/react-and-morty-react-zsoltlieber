@@ -12,21 +12,38 @@
 .buttons {
     cursor: pointer;
     text-align: center;
-    background-color: transparent;
+    background-color: rgb(178, 223, 40);
+    color: black;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 20px;
     margin-top: 30px;
-    padding: 5px;
+    padding: 10px;
+    font-size: 20px;
+    border-color: transparent;
+    border-radius: 20px;
 }
 .buttons:hover {
-    background-color: aqua;
-    color: red;
+    background-color: aliceblue;
+    color: black;
     padding-left: 10px;
     padding-right: 10px;
+    
 }
 .containerBox{
     background-color: bisque;
     display: flex;
     flex-wrap: wrap;
+}
+
+.description {
+    background-color: rgb(58, 157, 164);
+    color: aliceblue;
+    margin-top: 30px;
+    margin-left: 400px;
+    margin-right: 400px;
+    padding: 30px;
+    font-size: 20px;
+    border-radius: 40px;
+    border: 5px dotted aliceblue;
 }
