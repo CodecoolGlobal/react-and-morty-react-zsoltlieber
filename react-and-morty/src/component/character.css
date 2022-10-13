@@ -31,6 +31,7 @@
     transition: all 0.8s ease;
     -webkit-transition: all 0.8s ease;
     padding-top: 40px;
+    border-radius: 35px;
 }
 
 .cardList{
