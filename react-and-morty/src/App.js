@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import Characters from "./component/Characters";
 import Location from "./component/Location";
-import background from "./background.png";;
 
 function App() {
   const [showCharacters, setShowCharacters] = useState(false);
@@ -22,14 +21,7 @@ function App() {
   }
 
   return (
-    <div className="App" style={{
-      backgroundImage : `url(${background})`,
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-      backgroundAttachment: "fixed",
-      height: "800vh"
-      }}>
+    <div className="App">
       {!showCharacters && !showLocations && (
         <img id="logo" src={require("./Rick-and-Morty.png")} alt="" />
       )}
@@ -53,7 +45,6 @@ function App() {
         </div>
       )}
       <div className="container">
-     
         {showCharacters && <Characters />}
         {showLocations && <Location />}
       </div>
